@@ -1,5 +1,5 @@
 package example
 
 type NaceGood struct {
-	isNoob bool
+	IsNoob bool
 }

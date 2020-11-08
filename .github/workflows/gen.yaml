@@ -24,6 +24,5 @@ jobs:
           echo "::add-path::$HOME/gotip/bin"
       - name: Generate Set & Test
         run: |
-          gotip install
-          gen set -p example NaceSet \*NaceGood -o example/set/nace.gen.go
+          go build main.go -o gen && ./gen set -p example NaceSet \*NaceGood -o example/set/nace.gen.go
           go test -v ./example/set/... -race -cover
