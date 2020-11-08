@@ -30,7 +30,7 @@ var setCmd = &cobra.Command{
 	Use:   "set",
 	Short: "generate the customized set data structure",
 	Long: `sub-commnad set is a generator wrapper of the https://github.com/scylladb/go-set for supporting the customized set data structure,
-	specifically, it is a Go template implementation of its gen.sh.
+	specifically, it is a Go template implementation of its gen_set.sh, use the same 'gen set <SETNAME> <SETTYPE>'.
 	`,
 	RunE: func(_ *cobra.Command, args []string) error {
 		if len(args) == 0 {
