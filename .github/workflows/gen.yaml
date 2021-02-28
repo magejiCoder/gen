@@ -11,17 +11,10 @@ jobs:
     runs-on: ubuntu-16.04
     strategy:
       matrix:
-        go: [ 'gotip' ]
+        go: [ 'go1.16' ]
     name: Go install
     steps:
       - uses: actions/checkout@v2
-      - name: Setup gotip
-        run: |
-          git clone --depth=1 https://go.googlesource.com/go $HOME/gotip
-          cd $HOME/gotip/src
-          ./make.bash
-          echo "::set-env name=GOROOT::$HOME/gotip"
-          echo "::add-path::$HOME/gotip/bin"
       - name: Generate Set & Test
         run: |
           go build main.go -o gen && ./gen set -p example NaceSet \*NaceGood -o example/set/nace.gen.go
